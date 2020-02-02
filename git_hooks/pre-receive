@@ -1,0 +1,11 @@
+#!/bin/sh
+read old_revision new_revision refs_name
+
+if [ $refs_name = "refs/heads/master" ]
+then
+echo "Cannot push to master"
+exit -1
+fi
+
+echo "pre-receive OK"
+exit 0
