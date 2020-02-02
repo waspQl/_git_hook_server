@@ -1,0 +1,14 @@
+#!/bin/sh
+ 
+remote="$1"
+url="$2"
+ 
+while read local_ref local_sha remote_ref remote_sha
+do
+if [[ "$remote_ref" =~ ^.*/(master)$ ]]; then
+echo "$remote_ref には直接pushできません。"
+exit 1
+fi
+done
+ 
+exit 0
